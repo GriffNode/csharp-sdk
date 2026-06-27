@@ -1,0 +1,25 @@
+# OS / editor
+.DS_Store
+*.swp
+# Secrets
+.env
+*.pem
+# Node
+node_modules/
+dist/
+# Python
+__pycache__/
+*.egg-info/
+.venv/
+build/
+# PHP
+vendor/
+# Java / Kotlin
+target/
+*.class
+# C#
+bin/
+obj/
+# Rust
+/target/
+Cargo.lock

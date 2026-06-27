@@ -1,0 +1,7 @@
+README.md
+LICENSE
+.gitignore
+.github/**
+openapi.yaml
+openapitools.json
+.openapi-generator-ignore
