@@ -1,7 +1,7 @@
 openapi: 3.1.0
 
 # ─────────────────────────────────────────────────────────────────────────────
-# CryptoGate Public Merchant API — SINGLE SOURCE OF TRUTH
+# GriffNode Public Merchant API — SINGLE SOURCE OF TRUTH
 #
 # This file is CANONICAL. Code, docs, SDKs, and plugins are reconciled TO it.
 # Governance: docs/sdk/api-contract-governance.md  (the contract is FROZEN).
@@ -17,7 +17,7 @@ openapi: 3.1.0
 # ─────────────────────────────────────────────────────────────────────────────
 
 info:
-  title: CryptoGate API
+  title: GriffNode API
   version: "1.0.1"
   description: >
     Accept Bitcoin, Litecoin, Dogecoin, Dash, Ethereum and ERC-20 tokens.
@@ -38,11 +38,11 @@ info:
   license:
     name: Apache-2.0
   contact:
-    name: CryptoGate Developers
-    url: https://cryptogate.live
+    name: GriffNode Developers
+    url: https://griffnode.com
 
 servers:
-  - url: https://api.cryptogate.live/v1
+  - url: https://api.griffnode.com/v1
     description: >
       Single base URL for both live and test traffic. A live secret key (`sk_live_`)
       settles real funds on mainnet; a test secret key (`sk_test_`) runs in test mode
@@ -81,7 +81,7 @@ paths:
                 type: object
                 properties:
                   status: { type: string, examples: ["operational"] }
-                  service: { type: string, examples: ["CryptoGate API"] }
+                  service: { type: string, examples: ["GriffNode API"] }
                   version: { type: string, examples: ["1.0.0"] }
 
   /pay:
@@ -101,7 +101,7 @@ paths:
         - { name: link, in: query, required: false, schema: { type: string }, description: "Payment-link slug for attribution." }
       responses:
         "302":
-          description: Redirect to https://cryptogate.live/transaction/{transaction_id}
+          description: Redirect to https://griffnode.com/transaction/{transaction_id}
         "400": { $ref: "#/components/responses/BadRequest" }
 
   /transactions/create:
@@ -382,7 +382,7 @@ paths:
     get:
       operationId: listInvoices
       tags: [Account]
-      summary: CryptoGate billing invoices (platform ↔ merchant)
+      summary: GriffNode billing invoices (platform ↔ merchant)
       parameters:
         - $ref: "#/components/parameters/Limit"
         - $ref: "#/components/parameters/Offset"
@@ -442,9 +442,9 @@ webhooks:
       summary: Payment lifecycle event delivered to the merchant's webhook URL
       description: >
         Signed with HMAC-SHA256 over the RAW request body. Verify by comparing
-        `X-CryptoGate-Signature: sha256=<hex>` to
+        `X-GriffNode-Signature: sha256=<hex>` to
         `hex(hmac_sha256(webhook_secret, raw_body))` using a constant-time compare.
-        Also sent: `X-CryptoGate-Event` (the event type) and `X-Webhook-ID`
+        Also sent: `X-GriffNode-Event` (the event type) and `X-Webhook-ID`
         (unique delivery id — use for idempotency).
       requestBody:
         content:
@@ -550,7 +550,7 @@ components:
       type: object
       description: One on-chain payment toward the transaction.
       properties:
-        txid: { type: string, description: "On-chain transaction hash (blockchain id, NOT the CryptoGate transaction_id)." }
+        txid: { type: string, description: "On-chain transaction hash (blockchain id, NOT the GriffNode transaction_id)." }
         amount_crypto: { type: number }
         confirmations: { type: integer }
         status: { type: string }

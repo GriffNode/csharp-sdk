@@ -17,7 +17,7 @@ jobs:
             openapitools/openapi-generator-cli:v7.10.0 \
             generate -i /local/openapi.yaml -g csharp -o /local \
             --skip-validate-spec \
-            --additional-properties=packageName=CryptoGate,targetFramework=net8.0,library=httpclient,packageVersion=0.1.0
+            --additional-properties=packageName=GriffNode.SDK,targetFramework=net8.0,library=httpclient,packageVersion=0.1.0
       - name: Commit regenerated SDK
         run: |
           git config user.name  "github-actions[bot]"

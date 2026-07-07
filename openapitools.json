@@ -8,7 +8,7 @@
         "generatorName": "csharp",
         "inputSpec": "openapi.yaml",
         "output": ".",
-        "additionalProperties": { "packageName": "CryptoGate", "targetFramework": "net8.0", "library": "httpclient", "packageVersion": "0.1.0" }
+        "additionalProperties": { "packageName": "GriffNode.SDK", "targetFramework": "net8.0", "library": "httpclient", "packageVersion": "0.1.0" }
       }
     }
   }
