@@ -1,4 +1,4 @@
-# CryptoGate.Model.InlineObject
+# GriffNode.SDK.Model.InlineObject
 
 ## Properties
 

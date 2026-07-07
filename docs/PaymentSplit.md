@@ -1,11 +1,11 @@
-# CryptoGate.Model.PaymentSplit
+# GriffNode.SDK.Model.PaymentSplit
 One on-chain payment toward the transaction.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Txid** | **string** | On-chain transaction hash (blockchain id, NOT the CryptoGate transaction_id). | [optional] 
+**Txid** | **string** | On-chain transaction hash (blockchain id, NOT the GriffNode transaction_id). | [optional] 
 **AmountCrypto** | **decimal** |  | [optional] 
 **Confirmations** | **int** |  | [optional] 
 **Status** | **string** |  | [optional] 

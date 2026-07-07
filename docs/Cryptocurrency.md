@@ -1,4 +1,4 @@
-# CryptoGate.Model.Cryptocurrency
+# GriffNode.SDK.Model.Cryptocurrency
 
 ## Properties
 

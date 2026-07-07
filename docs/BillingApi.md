@@ -1,6 +1,6 @@
-# CryptoGate.Api.BillingApi
+# GriffNode.SDK.Api.BillingApi
 
-All URIs are relative to *https://api.cryptogate.live/v1*
+All URIs are relative to *https://api.griffnode.com/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -17,9 +17,9 @@ Start a plan upgrade or account top-up
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using CryptoGate.Api;
-using CryptoGate.Client;
-using CryptoGate.Model;
+using GriffNode.SDK.Api;
+using GriffNode.SDK.Client;
+using GriffNode.SDK.Model;
 
 namespace Example
 {
@@ -28,7 +28,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.cryptogate.live/v1";
+            config.BasePath = "https://api.griffnode.com/v1";
             // Configure Bearer token for authorization: SecretKey
             config.AccessToken = "YOUR_BEARER_TOKEN";
 

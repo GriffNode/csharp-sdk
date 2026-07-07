@@ -1,4 +1,4 @@
-# CryptoGate.Model.GetAccount200Response
+# GriffNode.SDK.Model.GetAccount200Response
 
 ## Properties
 

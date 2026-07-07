@@ -1,13 +1,13 @@
-# CryptoGate.Api.AccountApi
+# GriffNode.SDK.Api.AccountApi
 
-All URIs are relative to *https://api.cryptogate.live/v1*
+All URIs are relative to *https://api.griffnode.com/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**GetAccount**](AccountApi.md#getaccount) | **GET** /account | Merchant plan, usage and limits |
 | [**GetStats**](AccountApi.md#getstats) | **GET** /stats | Merchant transaction analytics |
 | [**ListBalances**](AccountApi.md#listbalances) | **GET** /balances | On-platform balances (for overage/top-up; NOT crypto settlement) |
-| [**ListInvoices**](AccountApi.md#listinvoices) | **GET** /invoices | CryptoGate billing invoices (platform ↔ merchant) |
+| [**ListInvoices**](AccountApi.md#listinvoices) | **GET** /invoices | GriffNode billing invoices (platform ↔ merchant) |
 | [**ListPlans**](AccountApi.md#listplans) | **GET** /plans | Plan catalogue and pricing |
 
 <a id="getaccount"></a>
@@ -21,9 +21,9 @@ Merchant plan, usage and limits
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using CryptoGate.Api;
-using CryptoGate.Client;
-using CryptoGate.Model;
+using GriffNode.SDK.Api;
+using GriffNode.SDK.Client;
+using GriffNode.SDK.Model;
 
 namespace Example
 {
@@ -32,7 +32,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.cryptogate.live/v1";
+            config.BasePath = "https://api.griffnode.com/v1";
             // Configure Bearer token for authorization: SecretKey
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -114,9 +114,9 @@ Merchant transaction analytics
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using CryptoGate.Api;
-using CryptoGate.Client;
-using CryptoGate.Model;
+using GriffNode.SDK.Api;
+using GriffNode.SDK.Client;
+using GriffNode.SDK.Model;
 
 namespace Example
 {
@@ -125,7 +125,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.cryptogate.live/v1";
+            config.BasePath = "https://api.griffnode.com/v1";
             // Configure Bearer token for authorization: SecretKey
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -207,9 +207,9 @@ On-platform balances (for overage/top-up; NOT crypto settlement)
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using CryptoGate.Api;
-using CryptoGate.Client;
-using CryptoGate.Model;
+using GriffNode.SDK.Api;
+using GriffNode.SDK.Client;
+using GriffNode.SDK.Model;
 
 namespace Example
 {
@@ -218,7 +218,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.cryptogate.live/v1";
+            config.BasePath = "https://api.griffnode.com/v1";
             // Configure Bearer token for authorization: SecretKey
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -293,16 +293,16 @@ This endpoint does not need any parameter.
 # **ListInvoices**
 > ListInvoices200Response ListInvoices (int? limit = null, int? offset = null)
 
-CryptoGate billing invoices (platform ↔ merchant)
+GriffNode billing invoices (platform ↔ merchant)
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using CryptoGate.Api;
-using CryptoGate.Client;
-using CryptoGate.Model;
+using GriffNode.SDK.Api;
+using GriffNode.SDK.Client;
+using GriffNode.SDK.Model;
 
 namespace Example
 {
@@ -311,7 +311,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.cryptogate.live/v1";
+            config.BasePath = "https://api.griffnode.com/v1";
             // Configure Bearer token for authorization: SecretKey
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -324,7 +324,7 @@ namespace Example
 
             try
             {
-                // CryptoGate billing invoices (platform ↔ merchant)
+                // GriffNode billing invoices (platform ↔ merchant)
                 ListInvoices200Response result = apiInstance.ListInvoices(limit, offset);
                 Debug.WriteLine(result);
             }
@@ -345,7 +345,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // CryptoGate billing invoices (platform ↔ merchant)
+    // GriffNode billing invoices (platform ↔ merchant)
     ApiResponse<ListInvoices200Response> response = apiInstance.ListInvoicesWithHttpInfo(limit, offset);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -400,9 +400,9 @@ Plan catalogue and pricing
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using CryptoGate.Api;
-using CryptoGate.Client;
-using CryptoGate.Model;
+using GriffNode.SDK.Api;
+using GriffNode.SDK.Client;
+using GriffNode.SDK.Model;
 
 namespace Example
 {
@@ -411,7 +411,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.cryptogate.live/v1";
+            config.BasePath = "https://api.griffnode.com/v1";
             // Configure Bearer token for authorization: SecretKey
             config.AccessToken = "YOUR_BEARER_TOKEN";
 

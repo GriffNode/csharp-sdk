@@ -1,4 +1,4 @@
-# CryptoGate.Model.Pagination
+# GriffNode.SDK.Model.Pagination
 
 ## Properties
 

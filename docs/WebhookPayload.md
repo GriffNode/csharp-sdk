@@ -1,4 +1,4 @@
-# CryptoGate.Model.WebhookPayload
+# GriffNode.SDK.Model.WebhookPayload
 Payment-event payload. AMOUNTS ARE STRINGS (e.g. \"100.00\", \"0.00109462\") to preserve decimal precision — parse before arithmetic. 
 
 ## Properties

@@ -1,4 +1,4 @@
-# CryptoGate.Model.CreateBillingCheckoutRequest
+# GriffNode.SDK.Model.CreateBillingCheckoutRequest
 
 ## Properties
 

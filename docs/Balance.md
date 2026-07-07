@@ -1,4 +1,4 @@
-# CryptoGate.Model.Balance
+# GriffNode.SDK.Model.Balance
 
 ## Properties
 

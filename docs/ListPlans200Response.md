@@ -1,4 +1,4 @@
-# CryptoGate.Model.ListPlans200Response
+# GriffNode.SDK.Model.ListPlans200Response
 
 ## Properties
 

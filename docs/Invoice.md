@@ -1,4 +1,4 @@
-# CryptoGate.Model.Invoice
+# GriffNode.SDK.Model.Invoice
 
 ## Properties
 

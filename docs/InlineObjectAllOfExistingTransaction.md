@@ -1,4 +1,4 @@
-# CryptoGate.Model.InlineObjectAllOfExistingTransaction
+# GriffNode.SDK.Model.InlineObjectAllOfExistingTransaction
 
 ## Properties
 

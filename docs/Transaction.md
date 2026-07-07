@@ -1,4 +1,4 @@
-# CryptoGate.Model.Transaction
+# GriffNode.SDK.Model.Transaction
 The canonical, curated public view of a transaction (same shape from create, get and list). Internal fields (capability tokens, client_ip, address_index, derivation/db internals) are deliberately NOT exposed. 
 
 ## Properties

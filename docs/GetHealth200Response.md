@@ -1,4 +1,4 @@
-# CryptoGate.Model.GetHealth200Response
+# GriffNode.SDK.Model.GetHealth200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# CryptoGate.Model.Error
+# GriffNode.SDK.Model.Error
 
 ## Properties
 

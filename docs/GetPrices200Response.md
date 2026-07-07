@@ -1,4 +1,4 @@
-# CryptoGate.Model.GetPrices200Response
+# GriffNode.SDK.Model.GetPrices200Response
 
 ## Properties
 

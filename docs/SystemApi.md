@@ -1,6 +1,6 @@
-# CryptoGate.Api.SystemApi
+# GriffNode.SDK.Api.SystemApi
 
-All URIs are relative to *https://api.cryptogate.live/v1*
+All URIs are relative to *https://api.griffnode.com/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -18,9 +18,9 @@ API health check
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using CryptoGate.Api;
-using CryptoGate.Client;
-using CryptoGate.Model;
+using GriffNode.SDK.Api;
+using GriffNode.SDK.Client;
+using GriffNode.SDK.Model;
 
 namespace Example
 {
@@ -29,7 +29,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.cryptogate.live/v1";
+            config.BasePath = "https://api.griffnode.com/v1";
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
@@ -108,9 +108,9 @@ Browser-facing redirect to the hosted payment page, authenticated by a **publish
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using CryptoGate.Api;
-using CryptoGate.Client;
-using CryptoGate.Model;
+using GriffNode.SDK.Api;
+using GriffNode.SDK.Client;
+using GriffNode.SDK.Model;
 
 namespace Example
 {
@@ -119,7 +119,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.cryptogate.live/v1";
+            config.BasePath = "https://api.griffnode.com/v1";
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
@@ -188,7 +188,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **302** | Redirect to https://cryptogate.live/transaction/{transaction_id} |  -  |
+| **302** | Redirect to https://griffnode.com/transaction/{transaction_id} |  -  |
 | **400** | Validation error (INVALID_REQUEST, INVALID_CRYPTO, INVALID_AMOUNT, AMOUNT_TOO_LOW, INVALID_CURRENCY, INVALID_METADATA, WALLET_NOT_CONFIGURED, MISSING_ITEMS, MISSING_ORDER_ID, …). |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

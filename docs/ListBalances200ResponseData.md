@@ -1,4 +1,4 @@
-# CryptoGate.Model.ListBalances200ResponseData
+# GriffNode.SDK.Model.ListBalances200ResponseData
 
 ## Properties
 

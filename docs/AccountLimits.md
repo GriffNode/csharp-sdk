@@ -1,4 +1,4 @@
-# CryptoGate.Model.AccountLimits
+# GriffNode.SDK.Model.AccountLimits
 
 ## Properties
 

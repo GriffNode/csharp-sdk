@@ -1,4 +1,4 @@
-# CryptoGate.Model.CreateTransactionRequest
+# GriffNode.SDK.Model.CreateTransactionRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# CryptoGate.Model.Plan
+# GriffNode.SDK.Model.Plan
 
 ## Properties
 

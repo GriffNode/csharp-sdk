@@ -1,4 +1,4 @@
-# CryptoGate.Model.AccountPlan
+# GriffNode.SDK.Model.AccountPlan
 
 ## Properties
 

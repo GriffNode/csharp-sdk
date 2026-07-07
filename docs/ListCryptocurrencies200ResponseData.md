@@ -1,4 +1,4 @@
-# CryptoGate.Model.ListCryptocurrencies200ResponseData
+# GriffNode.SDK.Model.ListCryptocurrencies200ResponseData
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# CryptoGate.Model.PlanTier
+# GriffNode.SDK.Model.PlanTier
 
 ## Properties
 

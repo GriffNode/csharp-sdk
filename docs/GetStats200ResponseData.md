@@ -1,4 +1,4 @@
-# CryptoGate.Model.GetStats200ResponseData
+# GriffNode.SDK.Model.GetStats200ResponseData
 
 ## Properties
 

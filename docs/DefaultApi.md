@@ -1,6 +1,6 @@
-# CryptoGate.Api.DefaultApi
+# GriffNode.SDK.Api.DefaultApi
 
-All URIs are relative to *https://api.cryptogate.live/v1*
+All URIs are relative to *https://api.griffnode.com/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -12,16 +12,16 @@ All URIs are relative to *https://api.cryptogate.live/v1*
 
 Payment lifecycle event delivered to the merchant's webhook URL
 
-Signed with HMAC-SHA256 over the RAW request body. Verify by comparing `X-CryptoGate-Signature: sha256=<hex>` to `hex(hmac_sha256(webhook_secret, raw_body))` using a constant-time compare. Also sent: `X-CryptoGate-Event` (the event type) and `X-Webhook-ID` (unique delivery id — use for idempotency). 
+Signed with HMAC-SHA256 over the RAW request body. Verify by comparing `X-GriffNode-Signature: sha256=<hex>` to `hex(hmac_sha256(webhook_secret, raw_body))` using a constant-time compare. Also sent: `X-GriffNode-Event` (the event type) and `X-Webhook-ID` (unique delivery id — use for idempotency). 
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using CryptoGate.Api;
-using CryptoGate.Client;
-using CryptoGate.Model;
+using GriffNode.SDK.Api;
+using GriffNode.SDK.Client;
+using GriffNode.SDK.Model;
 
 namespace Example
 {
@@ -30,7 +30,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.cryptogate.live/v1";
+            config.BasePath = "https://api.griffnode.com/v1";
             // Configure Bearer token for authorization: SecretKey
             config.AccessToken = "YOUR_BEARER_TOKEN";
 

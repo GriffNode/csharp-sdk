@@ -1,20 +1,20 @@
 openapi: 3.1.0
 info:
   contact:
-    name: CryptoGate Developers
-    url: https://cryptogate.live
+    name: GriffNode Developers
+    url: https://griffnode.com
   description: |
     Accept Bitcoin, Litecoin, Dogecoin, Dash, Ethereum and ERC-20 tokens. Server-to-server, authenticated with a secret API key (`Authorization: Bearer sk_live_…` for live, or `sk_test_…` for test mode — same base URL). All monetary amounts in API responses are JSON numbers; **webhook** amounts are strings to preserve decimal precision (see the `webhooks` section).
 
     **Rate limits.** Every request is rate-limited per API key in two windows — per minute and per hour — by plan tier (min/hour): starter 30/500, business 100/2000, professional 300/5000, enterprise 1000/20000. Every response carries `X-RateLimit-Limit`, `X-RateLimit-Remaining` and `X-RateLimit-Reset` (Unix seconds) for the per-minute window. On `429` the body is `error: "RATE_LIMIT_EXCEEDED"` (either window) with a `Retry-After` header (seconds) — clients should retry after it. A separate `429` with `error: "MONTHLY_LIMIT_REACHED"` means the plan's monthly transaction quota (not the request rate).
   license:
     name: Apache-2.0
-  title: CryptoGate API
+  title: GriffNode API
   version: 1.0.1
 servers:
 - description: |
     Single base URL for both live and test traffic. A live secret key (`sk_live_`) settles real funds on mainnet; a test secret key (`sk_test_`) runs in test mode with no real funds. There is no separate sandbox host.
-  url: https://api.cryptogate.live/v1
+  url: https://api.griffnode.com/v1
 security:
 - SecretKey: []
 tags:
@@ -82,7 +82,7 @@ paths:
         style: form
       responses:
         "302":
-          description: "Redirect to https://cryptogate.live/transaction/{transaction_id}"
+          description: "Redirect to https://griffnode.com/transaction/{transaction_id}"
         "400":
           $ref: '#/components/responses/BadRequest'
       security: []
@@ -346,7 +346,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
         "403":
           $ref: '#/components/responses/Forbidden'
-      summary: CryptoGate billing invoices (platform ↔ merchant)
+      summary: GriffNode billing invoices (platform ↔ merchant)
       tags:
       - Account
   /billing/checkout:
@@ -661,7 +661,7 @@ components:
         status: status
       properties:
         txid:
-          description: "On-chain transaction hash (blockchain id, NOT the CryptoGate\
+          description: "On-chain transaction hash (blockchain id, NOT the GriffNode\
             \ transaction_id)."
           type: string
         amount_crypto:

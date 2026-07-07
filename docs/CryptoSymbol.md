@@ -1,4 +1,4 @@
-# CryptoGate.Model.CryptoSymbol
+# GriffNode.SDK.Model.CryptoSymbol
 Supported coin/token symbol. /cryptos/list is authoritative at runtime.
 
 ## Properties

@@ -1,4 +1,4 @@
-# CryptoGate.Model.FiatCurrency
+# GriffNode.SDK.Model.FiatCurrency
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# CryptoGate.Model.ListInvoices200Response
+# GriffNode.SDK.Model.ListInvoices200Response
 
 ## Properties
 

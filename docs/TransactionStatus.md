@@ -1,4 +1,4 @@
-# CryptoGate.Model.TransactionStatus
+# GriffNode.SDK.Model.TransactionStatus
 Public transaction status (internal sub-states are mapped to these).
 
 ## Properties

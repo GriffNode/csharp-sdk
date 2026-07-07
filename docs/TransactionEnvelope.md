@@ -1,4 +1,4 @@
-# CryptoGate.Model.TransactionEnvelope
+# GriffNode.SDK.Model.TransactionEnvelope
 
 ## Properties
 

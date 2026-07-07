@@ -1,4 +1,4 @@
-# CryptoGate.Model.LineItem
+# GriffNode.SDK.Model.LineItem
 
 ## Properties
 
