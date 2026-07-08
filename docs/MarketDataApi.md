@@ -97,7 +97,7 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 | **200** | Live rates. |  -  |
 | **401** | Missing or invalid API key (UNAUTHORIZED). |  -  |
-| **500** | Internal error (RATE_FETCH_FAILED, ADDRESS_GENERATION_FAILED, MIDAS_ERROR, …). |  -  |
+| **500** | Internal error (RATE_FETCH_FAILED, ADDRESS_GENERATION_FAILED, UPSTREAM_ERROR, …). |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
