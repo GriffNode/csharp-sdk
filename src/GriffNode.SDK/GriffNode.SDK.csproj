@@ -6,15 +6,16 @@
     <AssemblyName>GriffNode.SDK</AssemblyName>
     <PackageId>GriffNode.SDK</PackageId>
     <OutputType>Library</OutputType>
-    <Authors>OpenAPI</Authors>
-    <Company>OpenAPI</Company>
+    <Authors>GriffNode</Authors>
+    <Company>GriffNode</Company>
     <AssemblyTitle>OpenAPI Library</AssemblyTitle>
-    <Description>A library generated from a OpenAPI doc</Description>
+    <Description>Official GriffNode SDK. Non-custodial crypto payment gateway: accept BTC, ETH, LTC, DOGE, DASH and ERC-20 tokens straight to your own wallet.</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>GriffNode.SDK</RootNamespace>
     <Version>0.1.0</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\GriffNode.SDK.xml</DocumentationFile>
-    <RepositoryUrl>https://github.com/GIT_USER_ID/GIT_REPO_ID.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/GriffNode/csharp-sdk.git</RepositoryUrl>
+    <PackageProjectUrl>https://griffnode.com</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>Minor update</PackageReleaseNotes>
     <Nullable>annotations</Nullable>

@@ -18,6 +18,15 @@ jobs:
             generate -i /local/openapi.yaml -g csharp -o /local \
             --skip-validate-spec \
             --additional-properties=packageName=GriffNode.SDK,targetFramework=net8.0,library=httpclient,packageVersion=0.1.0
+      - name: Fix csproj metadata (generator has no URL properties, leaves GIT_USER_ID placeholder)
+        run: |
+          f=src/GriffNode.SDK/GriffNode.SDK.csproj
+          sed -i "s#<Authors>.*</Authors>#<Authors>GriffNode</Authors>#" "$f"
+          sed -i "s#<Company>.*</Company>#<Company>GriffNode</Company>#" "$f"
+          sed -i "s#<Description>.*</Description>#<Description>Official GriffNode SDK. Non-custodial crypto payment gateway: accept BTC, ETH, LTC, DOGE, DASH and ERC-20 tokens straight to your own wallet.</Description>#" "$f"
+          sed -i "s#<RepositoryUrl>.*</RepositoryUrl>#<RepositoryUrl>https://github.com/GriffNode/csharp-sdk.git</RepositoryUrl>#" "$f"
+          grep -q "<PackageProjectUrl>" "$f" \
+            || sed -i "s#</RepositoryUrl>#</RepositoryUrl>\n    <PackageProjectUrl>https://griffnode.com</PackageProjectUrl>#" "$f"
       - name: Commit regenerated SDK
         run: |
           git config user.name  "github-actions[bot]"
