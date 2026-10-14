@@ -38,6 +38,12 @@ namespace GriffNode.SDK.Model
         /// </summary>
         [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
         public TransactionStatus Status { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Exception
+        /// </summary>
+        [DataMember(Name = "exception", EmitDefaultValue = false)]
+        public TransactionException? Exception { get; set; }
         /// <summary>
         /// Defines Type
         /// </summary>
@@ -85,6 +91,7 @@ namespace GriffNode.SDK.Model
         /// </summary>
         /// <param name="transactionId">transactionId (required).</param>
         /// <param name="status">status (required).</param>
+        /// <param name="exception">exception.</param>
         /// <param name="type">type.</param>
         /// <param name="crypto">crypto (required).</param>
         /// <param name="depositAddress">depositAddress.</param>
@@ -108,7 +115,7 @@ namespace GriffNode.SDK.Model
         /// <param name="createdAt">createdAt (required).</param>
         /// <param name="updatedAt">updatedAt.</param>
         /// <param name="expiresAt">expiresAt (required).</param>
-        public Transaction(string transactionId = default(string), TransactionStatus status = default(TransactionStatus), TypeEnum? type = default(TypeEnum?), CryptoSymbol crypto = default(CryptoSymbol), string depositAddress = default(string), decimal amountCrypto = default(decimal), decimal amountFiat = default(decimal), decimal amountUsd = default(decimal), decimal amountPaid = default(decimal), decimal amountRemaining = default(decimal), FiatCurrency currencyFiat = default(FiatCurrency), decimal fiatToUsdRate = default(decimal), decimal exchangeRate = default(decimal), int confirmationsRequired = default(int), string paymentUrl = default(string), string orderId = default(string), string customerEmail = default(string), List<LineItem> items = default(List<LineItem>), List<PaymentSplit> payments = default(List<PaymentSplit>), Dictionary<string, string> metadata = default(Dictionary<string, string>), string successUrl = default(string), string cancelUrl = default(string), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime), DateTime expiresAt = default(DateTime))
+        public Transaction(string transactionId = default(string), TransactionStatus status = default(TransactionStatus), TransactionException? exception = default(TransactionException?), TypeEnum? type = default(TypeEnum?), CryptoSymbol crypto = default(CryptoSymbol), string depositAddress = default(string), decimal amountCrypto = default(decimal), decimal amountFiat = default(decimal), decimal amountUsd = default(decimal), decimal amountPaid = default(decimal), decimal amountRemaining = default(decimal), FiatCurrency currencyFiat = default(FiatCurrency), decimal fiatToUsdRate = default(decimal), decimal exchangeRate = default(decimal), int confirmationsRequired = default(int), string paymentUrl = default(string), string orderId = default(string), string customerEmail = default(string), List<LineItem> items = default(List<LineItem>), List<PaymentSplit> payments = default(List<PaymentSplit>), Dictionary<string, string> metadata = default(Dictionary<string, string>), string successUrl = default(string), string cancelUrl = default(string), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime), DateTime expiresAt = default(DateTime))
         {
             // to ensure "transactionId" is required (not null)
             if (transactionId == null)
@@ -123,6 +130,7 @@ namespace GriffNode.SDK.Model
             this.CurrencyFiat = currencyFiat;
             this.CreatedAt = createdAt;
             this.ExpiresAt = expiresAt;
+            this.Exception = exception;
             this.Type = type;
             this.DepositAddress = depositAddress;
             this.AmountCrypto = amountCrypto;
@@ -281,6 +289,7 @@ namespace GriffNode.SDK.Model
             sb.Append("class Transaction {\n");
             sb.Append("  TransactionId: ").Append(TransactionId).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  Exception: ").Append(Exception).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Crypto: ").Append(Crypto).Append("\n");
             sb.Append("  DepositAddress: ").Append(DepositAddress).Append("\n");

@@ -78,7 +78,19 @@ namespace GriffNode.SDK.Model
             /// Enum Failed for value: payment.failed
             /// </summary>
             [EnumMember(Value = "payment.failed")]
-            Failed = 7
+            Failed = 7,
+
+            /// <summary>
+            /// Enum PaidLate for value: payment.paid_late
+            /// </summary>
+            [EnumMember(Value = "payment.paid_late")]
+            PaidLate = 8,
+
+            /// <summary>
+            /// Enum NeedsReview for value: payment.needs_review
+            /// </summary>
+            [EnumMember(Value = "payment.needs_review")]
+            NeedsReview = 9
         }
 
 
@@ -93,6 +105,12 @@ namespace GriffNode.SDK.Model
         /// </summary>
         [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
         public TransactionStatus Status { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Exception
+        /// </summary>
+        [DataMember(Name = "exception", EmitDefaultValue = false)]
+        public TransactionException? Exception { get; set; }
 
         /// <summary>
         /// Gets or Sets CurrencyCrypto
@@ -117,6 +135,7 @@ namespace GriffNode.SDK.Model
         /// <param name="timestamp">timestamp (required).</param>
         /// <param name="transactionId">transactionId (required).</param>
         /// <param name="status">status (required).</param>
+        /// <param name="exception">exception.</param>
         /// <param name="currencyCrypto">currencyCrypto.</param>
         /// <param name="currencyFiat">currencyFiat.</param>
         /// <param name="amountFiat">Decimal string..</param>
@@ -125,7 +144,7 @@ namespace GriffNode.SDK.Model
         /// <param name="orderId">orderId.</param>
         /// <param name="receiptUrl">Present on completed/overpaid..</param>
         /// <param name="metadata">Free-form key/value (≤20 keys, string values ≤500 chars, ≤4 KB total)..</param>
-        public WebhookPayload(EventEnum varEvent = default(EventEnum), DateTime timestamp = default(DateTime), string transactionId = default(string), TransactionStatus status = default(TransactionStatus), CryptoSymbol? currencyCrypto = default(CryptoSymbol?), FiatCurrency? currencyFiat = default(FiatCurrency?), string amountFiat = default(string), string amountUsd = default(string), string amountCrypto = default(string), string orderId = default(string), string receiptUrl = default(string), Dictionary<string, string> metadata = default(Dictionary<string, string>))
+        public WebhookPayload(EventEnum varEvent = default(EventEnum), DateTime timestamp = default(DateTime), string transactionId = default(string), TransactionStatus status = default(TransactionStatus), TransactionException? exception = default(TransactionException?), CryptoSymbol? currencyCrypto = default(CryptoSymbol?), FiatCurrency? currencyFiat = default(FiatCurrency?), string amountFiat = default(string), string amountUsd = default(string), string amountCrypto = default(string), string orderId = default(string), string receiptUrl = default(string), Dictionary<string, string> metadata = default(Dictionary<string, string>))
         {
             this.Event = varEvent;
             this.Timestamp = timestamp;
@@ -136,6 +155,7 @@ namespace GriffNode.SDK.Model
             }
             this.TransactionId = transactionId;
             this.Status = status;
+            this.Exception = exception;
             this.CurrencyCrypto = currencyCrypto;
             this.CurrencyFiat = currencyFiat;
             this.AmountFiat = amountFiat;
@@ -211,6 +231,7 @@ namespace GriffNode.SDK.Model
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("  TransactionId: ").Append(TransactionId).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  Exception: ").Append(Exception).Append("\n");
             sb.Append("  CurrencyCrypto: ").Append(CurrencyCrypto).Append("\n");
             sb.Append("  CurrencyFiat: ").Append(CurrencyFiat).Append("\n");
             sb.Append("  AmountFiat: ").Append(AmountFiat).Append("\n");

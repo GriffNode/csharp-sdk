@@ -533,6 +533,13 @@ components:
       - expired
       - failed
       type: string
+    TransactionException:
+      description: |
+        Present only when the payment waits for the merchant's decision. paid_late: coins arrived within 6h after the window closed (status stays expired; complete it with Mark as paid in the dashboard, which also sends payment.completed). needs_review: ETH/ERC-20 deposit address balance dropped while open, payment unknown (status pending).
+      enum:
+      - paid_late
+      - needs_review
+      type: string
     PlanTier:
       enum:
       - starter
@@ -681,6 +688,7 @@ components:
       description: |
         The canonical, curated public view of a transaction (same shape from create, get and list). Internal fields (capability tokens, client_ip, address_index, derivation/db internals) are deliberately NOT exposed.
       example:
+        exception: paid_late
         amount_paid: 5.962133916683182
         amount_remaining: 5.637376656633329
         payment_url: https://openapi-generator.tech
@@ -730,6 +738,8 @@ components:
           type: string
         status:
           $ref: '#/components/schemas/TransactionStatus'
+        exception:
+          $ref: '#/components/schemas/TransactionException'
         type:
           enum:
           - basic
@@ -809,6 +819,7 @@ components:
     TransactionEnvelope:
       example:
         data:
+          exception: paid_late
           amount_paid: 5.962133916683182
           amount_remaining: 5.637376656633329
           payment_url: https://openapi-generator.tech
@@ -1015,13 +1026,14 @@ components:
         Payment-event payload. AMOUNTS ARE STRINGS (e.g. "100.00", "0.00109462") to preserve decimal precision — parse before arithmetic.
       example:
         transaction_id: transaction_id
-        amount_fiat: amount_fiat
+        exception: paid_late
         metadata:
           key: metadata
+        amount_usd: amount_usd
+        amount_fiat: amount_fiat
         currency_fiat: USD
         receipt_url: https://openapi-generator.tech
         currency_crypto: BTC
-        amount_usd: amount_usd
         amount_crypto: amount_crypto
         event: payment.created
         order_id: order_id
@@ -1037,6 +1049,8 @@ components:
           - payment.partial
           - payment.expired
           - payment.failed
+          - payment.paid_late
+          - payment.needs_review
           type: string
         timestamp:
           format: date-time
@@ -1045,6 +1059,8 @@ components:
           type: string
         status:
           $ref: '#/components/schemas/TransactionStatus'
+        exception:
+          $ref: '#/components/schemas/TransactionException'
         currency_crypto:
           $ref: '#/components/schemas/CryptoSymbol'
         currency_fiat:
@@ -1112,7 +1128,8 @@ components:
           offset: 6
           limit: 0
         transactions:
-        - amount_paid: 5.962133916683182
+        - exception: paid_late
+          amount_paid: 5.962133916683182
           amount_remaining: 5.637376656633329
           payment_url: https://openapi-generator.tech
           metadata:
@@ -1156,7 +1173,8 @@ components:
             name: name
           cancel_url: cancel_url
           status: pending
-        - amount_paid: 5.962133916683182
+        - exception: paid_late
+          amount_paid: 5.962133916683182
           amount_remaining: 5.637376656633329
           payment_url: https://openapi-generator.tech
           metadata:
@@ -1218,7 +1236,8 @@ components:
             offset: 6
             limit: 0
           transactions:
-          - amount_paid: 5.962133916683182
+          - exception: paid_late
+            amount_paid: 5.962133916683182
             amount_remaining: 5.637376656633329
             payment_url: https://openapi-generator.tech
             metadata:
@@ -1262,7 +1281,8 @@ components:
               name: name
             cancel_url: cancel_url
             status: pending
-          - amount_paid: 5.962133916683182
+          - exception: paid_late
+            amount_paid: 5.962133916683182
             amount_remaining: 5.637376656633329
             payment_url: https://openapi-generator.tech
             metadata:
