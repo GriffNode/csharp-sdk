@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **TransactionId** | **string** |  | 
 **Status** | **TransactionStatus** |  | 
+**Exception** | **TransactionException** |  | [optional] 
 **Type** | **string** |  | [optional] 
 **Crypto** | **CryptoSymbol** |  | 
 **DepositAddress** | **string** |  | [optional] 

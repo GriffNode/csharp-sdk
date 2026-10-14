@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Timestamp** | **DateTime** |  | 
 **TransactionId** | **string** |  | 
 **Status** | **TransactionStatus** |  | 
+**Exception** | **TransactionException** |  | [optional] 
 **CurrencyCrypto** | **CryptoSymbol** |  | [optional] 
 **CurrencyFiat** | **FiatCurrency** |  | [optional] 
 **AmountFiat** | **string** | Decimal string. | [optional] 
