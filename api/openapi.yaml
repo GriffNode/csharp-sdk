@@ -72,7 +72,24 @@ paths:
         schema:
           $ref: '#/components/schemas/CryptoSymbol'
         style: form
-      - description: Payment-link slug for attribution.
+      - description: "Fiat currency of `amount`. Ignored when `link` is set: a payment\
+          \ link always uses its own amount and currency."
+        explode: true
+        in: query
+        name: currency
+        required: false
+        schema:
+          default: USD
+          enum:
+          - USD
+          - PLN
+          - EUR
+          - GBP
+          type: string
+        style: form
+      - description: "Payment-link slug. The link's own amount, currency, expiry and\
+          \ single-use rules apply (410 if expired, 409 if a single-use link was already\
+          \ paid)."
         explode: true
         in: query
         name: link
@@ -1092,6 +1109,79 @@ components:
       - status
       - timestamp
       - transaction_id
+    RecurringWebhookPayload:
+      description: |
+        Recurring payment request event. schedule_id + your own reference identify the customer/order. The period's payment also fires the normal payment.* events.
+      properties:
+        id:
+          type: string
+        event:
+          enum:
+          - recurring.confirmed
+          - recurring.payment.completed
+          - recurring.payment.unpaid
+          - recurring.stopped
+          type: string
+        timestamp:
+          format: date-time
+          type: string
+        schedule_id:
+          format: uuid
+          type: string
+        reference:
+          description: "Your own customer/order id, as entered on the schedule."
+          type: string
+        customer_email:
+          format: email
+          type: string
+        description:
+          type: string
+        amount_fiat:
+          description: Decimal string.
+          type: string
+        currency_fiat:
+          enum:
+          - USD
+          - PLN
+          - EUR
+          - GBP
+          type: string
+        interval:
+          enum:
+          - weekly
+          - monthly
+          - quarterly
+          - yearly
+          type: string
+        status:
+          enum:
+          - pending_confirmation
+          - active
+          - paused
+          - cancelled
+          - stopped_by_customer
+          - bounced
+          - expired_unconfirmed
+          type: string
+        period_no:
+          description: recurring.payment.* only.
+          type: integer
+        transaction_id:
+          description: recurring.payment.completed only.
+          type: string
+        reason:
+          description: recurring.stopped only.
+          enum:
+          - stopped_by_customer
+          - bounced
+          - unconfirmed
+          type: string
+      required:
+      - event
+      - id
+      - schedule_id
+      - status
+      - timestamp
     Error:
       example:
         success: ""

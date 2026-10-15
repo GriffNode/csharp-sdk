@@ -97,7 +97,7 @@ No authorization required
 
 <a id="hostedcheckoutredirect"></a>
 # **HostedCheckoutRedirect**
-> void HostedCheckoutRedirect (string pk, string amount, CryptoSymbol crypto, string? link = null)
+> void HostedCheckoutRedirect (string pk, string amount, CryptoSymbol crypto, string? currency = null, string? link = null)
 
 Hosted-checkout redirect (browser flow, publishable key)
 
@@ -127,12 +127,13 @@ namespace Example
             var pk = "pk_example";  // string | Publishable key, pk_live_… / pk_test_…
             var amount = "amount_example";  // string | Fiat amount (≥ 1.00 USD equivalent).
             var crypto = (CryptoSymbol) "BTC";  // CryptoSymbol | 
-            var link = "link_example";  // string? | Payment-link slug for attribution. (optional) 
+            var currency = "USD";  // string? | Fiat currency of `amount`. Ignored when `link` is set: a payment link always uses its own amount and currency. (optional)  (default to USD)
+            var link = "link_example";  // string? | Payment-link slug. The link's own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid). (optional) 
 
             try
             {
                 // Hosted-checkout redirect (browser flow, publishable key)
-                apiInstance.HostedCheckoutRedirect(pk, amount, crypto, link);
+                apiInstance.HostedCheckoutRedirect(pk, amount, crypto, currency, link);
             }
             catch (ApiException  e)
             {
@@ -152,7 +153,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Hosted-checkout redirect (browser flow, publishable key)
-    apiInstance.HostedCheckoutRedirectWithHttpInfo(pk, amount, crypto, link);
+    apiInstance.HostedCheckoutRedirectWithHttpInfo(pk, amount, crypto, currency, link);
 }
 catch (ApiException e)
 {
@@ -169,7 +170,8 @@ catch (ApiException e)
 | **pk** | **string** | Publishable key, pk_live_… / pk_test_… |  |
 | **amount** | **string** | Fiat amount (≥ 1.00 USD equivalent). |  |
 | **crypto** | **CryptoSymbol** |  |  |
-| **link** | **string?** | Payment-link slug for attribution. | [optional]  |
+| **currency** | **string?** | Fiat currency of &#x60;amount&#x60;. Ignored when &#x60;link&#x60; is set: a payment link always uses its own amount and currency. | [optional] [default to USD] |
+| **link** | **string?** | Payment-link slug. The link&#39;s own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid). | [optional]  |
 
 ### Return type
 
