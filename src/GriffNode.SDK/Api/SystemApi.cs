@@ -53,9 +53,10 @@ namespace GriffNode.SDK.Api
         /// <param name="pk">Publishable key, pk_live_… / pk_test_…</param>
         /// <param name="amount">Fiat amount (≥ 1.00 USD equivalent).</param>
         /// <param name="crypto"></param>
-        /// <param name="link">Payment-link slug for attribution. (optional)</param>
+        /// <param name="currency">Fiat currency of &#x60;amount&#x60;. Ignored when &#x60;link&#x60; is set: a payment link always uses its own amount and currency. (optional, default to USD)</param>
+        /// <param name="link">Payment-link slug. The link&#39;s own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid). (optional)</param>
         /// <returns></returns>
-        void HostedCheckoutRedirect(string pk, string amount, CryptoSymbol crypto, string? link = default(string?));
+        void HostedCheckoutRedirect(string pk, string amount, CryptoSymbol crypto, string? currency = default(string?), string? link = default(string?));
 
         /// <summary>
         /// Hosted-checkout redirect (browser flow, publishable key)
@@ -67,9 +68,10 @@ namespace GriffNode.SDK.Api
         /// <param name="pk">Publishable key, pk_live_… / pk_test_…</param>
         /// <param name="amount">Fiat amount (≥ 1.00 USD equivalent).</param>
         /// <param name="crypto"></param>
-        /// <param name="link">Payment-link slug for attribution. (optional)</param>
+        /// <param name="currency">Fiat currency of &#x60;amount&#x60;. Ignored when &#x60;link&#x60; is set: a payment link always uses its own amount and currency. (optional, default to USD)</param>
+        /// <param name="link">Payment-link slug. The link&#39;s own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid). (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> HostedCheckoutRedirectWithHttpInfo(string pk, string amount, CryptoSymbol crypto, string? link = default(string?));
+        ApiResponse<Object> HostedCheckoutRedirectWithHttpInfo(string pk, string amount, CryptoSymbol crypto, string? currency = default(string?), string? link = default(string?));
         #endregion Synchronous Operations
     }
 
@@ -110,10 +112,11 @@ namespace GriffNode.SDK.Api
         /// <param name="pk">Publishable key, pk_live_… / pk_test_…</param>
         /// <param name="amount">Fiat amount (≥ 1.00 USD equivalent).</param>
         /// <param name="crypto"></param>
-        /// <param name="link">Payment-link slug for attribution. (optional)</param>
+        /// <param name="currency">Fiat currency of &#x60;amount&#x60;. Ignored when &#x60;link&#x60; is set: a payment link always uses its own amount and currency. (optional, default to USD)</param>
+        /// <param name="link">Payment-link slug. The link&#39;s own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid). (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task HostedCheckoutRedirectAsync(string pk, string amount, CryptoSymbol crypto, string? link = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task HostedCheckoutRedirectAsync(string pk, string amount, CryptoSymbol crypto, string? currency = default(string?), string? link = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Hosted-checkout redirect (browser flow, publishable key)
@@ -125,10 +128,11 @@ namespace GriffNode.SDK.Api
         /// <param name="pk">Publishable key, pk_live_… / pk_test_…</param>
         /// <param name="amount">Fiat amount (≥ 1.00 USD equivalent).</param>
         /// <param name="crypto"></param>
-        /// <param name="link">Payment-link slug for attribution. (optional)</param>
+        /// <param name="currency">Fiat currency of &#x60;amount&#x60;. Ignored when &#x60;link&#x60; is set: a payment link always uses its own amount and currency. (optional, default to USD)</param>
+        /// <param name="link">Payment-link slug. The link&#39;s own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid). (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> HostedCheckoutRedirectWithHttpInfoAsync(string pk, string amount, CryptoSymbol crypto, string? link = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> HostedCheckoutRedirectWithHttpInfoAsync(string pk, string amount, CryptoSymbol crypto, string? currency = default(string?), string? link = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -450,11 +454,12 @@ namespace GriffNode.SDK.Api
         /// <param name="pk">Publishable key, pk_live_… / pk_test_…</param>
         /// <param name="amount">Fiat amount (≥ 1.00 USD equivalent).</param>
         /// <param name="crypto"></param>
-        /// <param name="link">Payment-link slug for attribution. (optional)</param>
+        /// <param name="currency">Fiat currency of &#x60;amount&#x60;. Ignored when &#x60;link&#x60; is set: a payment link always uses its own amount and currency. (optional, default to USD)</param>
+        /// <param name="link">Payment-link slug. The link&#39;s own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid). (optional)</param>
         /// <returns></returns>
-        public void HostedCheckoutRedirect(string pk, string amount, CryptoSymbol crypto, string? link = default(string?))
+        public void HostedCheckoutRedirect(string pk, string amount, CryptoSymbol crypto, string? currency = default(string?), string? link = default(string?))
         {
-            HostedCheckoutRedirectWithHttpInfo(pk, amount, crypto, link);
+            HostedCheckoutRedirectWithHttpInfo(pk, amount, crypto, currency, link);
         }
 
         /// <summary>
@@ -464,9 +469,10 @@ namespace GriffNode.SDK.Api
         /// <param name="pk">Publishable key, pk_live_… / pk_test_…</param>
         /// <param name="amount">Fiat amount (≥ 1.00 USD equivalent).</param>
         /// <param name="crypto"></param>
-        /// <param name="link">Payment-link slug for attribution. (optional)</param>
+        /// <param name="currency">Fiat currency of &#x60;amount&#x60;. Ignored when &#x60;link&#x60; is set: a payment link always uses its own amount and currency. (optional, default to USD)</param>
+        /// <param name="link">Payment-link slug. The link&#39;s own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid). (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public GriffNode.SDK.Client.ApiResponse<Object> HostedCheckoutRedirectWithHttpInfo(string pk, string amount, CryptoSymbol crypto, string? link = default(string?))
+        public GriffNode.SDK.Client.ApiResponse<Object> HostedCheckoutRedirectWithHttpInfo(string pk, string amount, CryptoSymbol crypto, string? currency = default(string?), string? link = default(string?))
         {
             // verify the required parameter 'pk' is set
             if (pk == null)
@@ -495,6 +501,10 @@ namespace GriffNode.SDK.Api
             localVarRequestOptions.QueryParameters.Add(GriffNode.SDK.Client.ClientUtils.ParameterToMultiMap("", "pk", pk));
             localVarRequestOptions.QueryParameters.Add(GriffNode.SDK.Client.ClientUtils.ParameterToMultiMap("", "amount", amount));
             localVarRequestOptions.QueryParameters.Add(GriffNode.SDK.Client.ClientUtils.ParameterToMultiMap("", "crypto", crypto));
+            if (currency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(GriffNode.SDK.Client.ClientUtils.ParameterToMultiMap("", "currency", currency));
+            }
             if (link != null)
             {
                 localVarRequestOptions.QueryParameters.Add(GriffNode.SDK.Client.ClientUtils.ParameterToMultiMap("", "link", link));
@@ -520,12 +530,13 @@ namespace GriffNode.SDK.Api
         /// <param name="pk">Publishable key, pk_live_… / pk_test_…</param>
         /// <param name="amount">Fiat amount (≥ 1.00 USD equivalent).</param>
         /// <param name="crypto"></param>
-        /// <param name="link">Payment-link slug for attribution. (optional)</param>
+        /// <param name="currency">Fiat currency of &#x60;amount&#x60;. Ignored when &#x60;link&#x60; is set: a payment link always uses its own amount and currency. (optional, default to USD)</param>
+        /// <param name="link">Payment-link slug. The link&#39;s own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid). (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task HostedCheckoutRedirectAsync(string pk, string amount, CryptoSymbol crypto, string? link = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task HostedCheckoutRedirectAsync(string pk, string amount, CryptoSymbol crypto, string? currency = default(string?), string? link = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await HostedCheckoutRedirectWithHttpInfoAsync(pk, amount, crypto, link, cancellationToken).ConfigureAwait(false);
+            await HostedCheckoutRedirectWithHttpInfoAsync(pk, amount, crypto, currency, link, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -535,10 +546,11 @@ namespace GriffNode.SDK.Api
         /// <param name="pk">Publishable key, pk_live_… / pk_test_…</param>
         /// <param name="amount">Fiat amount (≥ 1.00 USD equivalent).</param>
         /// <param name="crypto"></param>
-        /// <param name="link">Payment-link slug for attribution. (optional)</param>
+        /// <param name="currency">Fiat currency of &#x60;amount&#x60;. Ignored when &#x60;link&#x60; is set: a payment link always uses its own amount and currency. (optional, default to USD)</param>
+        /// <param name="link">Payment-link slug. The link&#39;s own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid). (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<GriffNode.SDK.Client.ApiResponse<Object>> HostedCheckoutRedirectWithHttpInfoAsync(string pk, string amount, CryptoSymbol crypto, string? link = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GriffNode.SDK.Client.ApiResponse<Object>> HostedCheckoutRedirectWithHttpInfoAsync(string pk, string amount, CryptoSymbol crypto, string? currency = default(string?), string? link = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'pk' is set
             if (pk == null)
@@ -569,6 +581,10 @@ namespace GriffNode.SDK.Api
             localVarRequestOptions.QueryParameters.Add(GriffNode.SDK.Client.ClientUtils.ParameterToMultiMap("", "pk", pk));
             localVarRequestOptions.QueryParameters.Add(GriffNode.SDK.Client.ClientUtils.ParameterToMultiMap("", "amount", amount));
             localVarRequestOptions.QueryParameters.Add(GriffNode.SDK.Client.ClientUtils.ParameterToMultiMap("", "crypto", crypto));
+            if (currency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(GriffNode.SDK.Client.ClientUtils.ParameterToMultiMap("", "currency", currency));
+            }
             if (link != null)
             {
                 localVarRequestOptions.QueryParameters.Add(GriffNode.SDK.Client.ClientUtils.ParameterToMultiMap("", "link", link));
