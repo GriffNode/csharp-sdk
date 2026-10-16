@@ -76,52 +76,58 @@ namespace GriffNode.SDK.Model
         USDC = 7,
 
         /// <summary>
+        /// Enum EURC for value: EURC
+        /// </summary>
+        [EnumMember(Value = "EURC")]
+        EURC = 8,
+
+        /// <summary>
         /// Enum DAI for value: DAI
         /// </summary>
         [EnumMember(Value = "DAI")]
-        DAI = 8,
+        DAI = 9,
 
         /// <summary>
         /// Enum WBTC for value: WBTC
         /// </summary>
         [EnumMember(Value = "WBTC")]
-        WBTC = 9,
+        WBTC = 10,
 
         /// <summary>
         /// Enum SHIB for value: SHIB
         /// </summary>
         [EnumMember(Value = "SHIB")]
-        SHIB = 10,
+        SHIB = 11,
 
         /// <summary>
         /// Enum PEPE for value: PEPE
         /// </summary>
         [EnumMember(Value = "PEPE")]
-        PEPE = 11,
+        PEPE = 12,
 
         /// <summary>
         /// Enum LINK for value: LINK
         /// </summary>
         [EnumMember(Value = "LINK")]
-        LINK = 12,
+        LINK = 13,
 
         /// <summary>
         /// Enum UNI for value: UNI
         /// </summary>
         [EnumMember(Value = "UNI")]
-        UNI = 13,
+        UNI = 14,
 
         /// <summary>
         /// Enum AAVE for value: AAVE
         /// </summary>
         [EnumMember(Value = "AAVE")]
-        AAVE = 14,
+        AAVE = 15,
 
         /// <summary>
         /// Enum MKR for value: MKR
         /// </summary>
         [EnumMember(Value = "MKR")]
-        MKR = 15
+        MKR = 16
     }
 
 }
