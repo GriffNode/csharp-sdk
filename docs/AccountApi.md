@@ -6,7 +6,7 @@ All URIs are relative to *https://api.griffnode.com/v1*
 |--------|--------------|-------------|
 | [**GetAccount**](AccountApi.md#getaccount) | **GET** /account | Merchant plan, usage and limits |
 | [**GetStats**](AccountApi.md#getstats) | **GET** /stats | Merchant transaction analytics |
-| [**ListBalances**](AccountApi.md#listbalances) | **GET** /balances | On-platform balances (for overage/top-up; NOT crypto settlement) |
+| [**ListBalances**](AccountApi.md#listbalances) | **GET** /balances | Deprecated: always an empty list. GriffNode keeps no on-platform balance (no overage, no top-ups); crypto settles straight to your wallet. |
 | [**ListInvoices**](AccountApi.md#listinvoices) | **GET** /invoices | GriffNode billing invoices (platform ↔ merchant) |
 | [**ListPlans**](AccountApi.md#listplans) | **GET** /plans | Plan catalogue and pricing |
 
@@ -200,7 +200,7 @@ This endpoint does not need any parameter.
 # **ListBalances**
 > ListBalances200Response ListBalances ()
 
-On-platform balances (for overage/top-up; NOT crypto settlement)
+Deprecated: always an empty list. GriffNode keeps no on-platform balance (no overage, no top-ups); crypto settles straight to your wallet.
 
 ### Example
 ```csharp
@@ -229,7 +229,7 @@ namespace Example
 
             try
             {
-                // On-platform balances (for overage/top-up; NOT crypto settlement)
+                // Deprecated: always an empty list. GriffNode keeps no on-platform balance (no overage, no top-ups); crypto settles straight to your wallet.
                 ListBalances200Response result = apiInstance.ListBalances();
                 Debug.WriteLine(result);
             }
@@ -250,7 +250,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // On-platform balances (for overage/top-up; NOT crypto settlement)
+    // Deprecated: always an empty list. GriffNode keeps no on-platform balance (no overage, no top-ups); crypto settles straight to your wallet.
     ApiResponse<ListBalances200Response> response = apiInstance.ListBalancesWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

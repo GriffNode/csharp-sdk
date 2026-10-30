@@ -28,7 +28,7 @@ namespace GriffNode.SDK.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Start a plan upgrade or account top-up
+        /// Start a plan upgrade
         /// </summary>
         /// <exception cref="GriffNode.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBillingCheckoutRequest"></param>
@@ -36,7 +36,7 @@ namespace GriffNode.SDK.Api
         TransactionEnvelope CreateBillingCheckout(CreateBillingCheckoutRequest createBillingCheckoutRequest);
 
         /// <summary>
-        /// Start a plan upgrade or account top-up
+        /// Start a plan upgrade
         /// </summary>
         /// <remarks>
         /// 
@@ -55,7 +55,7 @@ namespace GriffNode.SDK.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Start a plan upgrade or account top-up
+        /// Start a plan upgrade
         /// </summary>
         /// <remarks>
         /// 
@@ -67,7 +67,7 @@ namespace GriffNode.SDK.Api
         System.Threading.Tasks.Task<TransactionEnvelope> CreateBillingCheckoutAsync(CreateBillingCheckoutRequest createBillingCheckoutRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
-        /// Start a plan upgrade or account top-up
+        /// Start a plan upgrade
         /// </summary>
         /// <remarks>
         /// 
@@ -291,7 +291,7 @@ namespace GriffNode.SDK.Api
         }
 
         /// <summary>
-        /// Start a plan upgrade or account top-up 
+        /// Start a plan upgrade 
         /// </summary>
         /// <exception cref="GriffNode.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBillingCheckoutRequest"></param>
@@ -303,7 +303,7 @@ namespace GriffNode.SDK.Api
         }
 
         /// <summary>
-        /// Start a plan upgrade or account top-up 
+        /// Start a plan upgrade 
         /// </summary>
         /// <exception cref="GriffNode.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBillingCheckoutRequest"></param>
@@ -353,7 +353,7 @@ namespace GriffNode.SDK.Api
         }
 
         /// <summary>
-        /// Start a plan upgrade or account top-up 
+        /// Start a plan upgrade 
         /// </summary>
         /// <exception cref="GriffNode.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBillingCheckoutRequest"></param>
@@ -366,7 +366,7 @@ namespace GriffNode.SDK.Api
         }
 
         /// <summary>
-        /// Start a plan upgrade or account top-up 
+        /// Start a plan upgrade 
         /// </summary>
         /// <exception cref="GriffNode.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBillingCheckoutRequest"></param>

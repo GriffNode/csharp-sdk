@@ -4,13 +4,13 @@ All URIs are relative to *https://api.griffnode.com/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CreateBillingCheckout**](BillingApi.md#createbillingcheckout) | **POST** /billing/checkout | Start a plan upgrade or account top-up |
+| [**CreateBillingCheckout**](BillingApi.md#createbillingcheckout) | **POST** /billing/checkout | Start a plan upgrade |
 
 <a id="createbillingcheckout"></a>
 # **CreateBillingCheckout**
 > TransactionEnvelope CreateBillingCheckout (CreateBillingCheckoutRequest createBillingCheckoutRequest)
 
-Start a plan upgrade or account top-up
+Start a plan upgrade
 
 ### Example
 ```csharp
@@ -40,7 +40,7 @@ namespace Example
 
             try
             {
-                // Start a plan upgrade or account top-up
+                // Start a plan upgrade
                 TransactionEnvelope result = apiInstance.CreateBillingCheckout(createBillingCheckoutRequest);
                 Debug.WriteLine(result);
             }
@@ -61,7 +61,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Start a plan upgrade or account top-up
+    // Start a plan upgrade
     ApiResponse<TransactionEnvelope> response = apiInstance.CreateBillingCheckoutWithHttpInfo(createBillingCheckoutRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -100,7 +100,6 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **201** | Billing transaction created. |  -  |
 | **401** | Missing or invalid API key (UNAUTHORIZED). |  -  |
-| **402** | Merchant platform balance too low for overage fees (INSUFFICIENT_BALANCE). |  -  |
 | **403** | Key lacks permission — e.g. a publishable key on a secret-only endpoint, or plan too low (FORBIDDEN, USE_PAY_ENDPOINT, PLAN_UPGRADE_REQUIRED, NO_ACTIVE_PLAN). |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

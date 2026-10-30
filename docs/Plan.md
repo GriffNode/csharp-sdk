@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **MonthlyPriceUsd** | **decimal?** |  | [optional] 
 **YearlyPriceUsd** | **decimal?** |  | [optional] 
 **MonthlyTransactionLimit** | **int?** |  | [optional] 
-**OverageCostPerTx** | **decimal** |  | [optional] 
+**OverageCostPerTx** | **decimal** | Always 0. Plans have a hard monthly limit and no overage. | [optional] 
 **WebhookSupport** | **bool** |  | [optional] 
 **WebhookLimit** | **int?** |  | [optional] 
 **IpWhitelist** | **bool** |  | [optional] 

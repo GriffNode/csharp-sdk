@@ -37,7 +37,7 @@ namespace GriffNode.SDK.Model
         /// </summary>
         /// <param name="monthlyTransactionsUsed">monthlyTransactionsUsed.</param>
         /// <param name="monthlyTransactionLimit">null &#x3D; unlimited..</param>
-        /// <param name="overageCostPerTx">overageCostPerTx.</param>
+        /// <param name="overageCostPerTx">Always 0. Plans have a hard monthly limit and no overage..</param>
         public AccountUsage(int monthlyTransactionsUsed = default(int), int? monthlyTransactionLimit = default(int?), decimal overageCostPerTx = default(decimal))
         {
             this.MonthlyTransactionsUsed = monthlyTransactionsUsed;
@@ -59,9 +59,11 @@ namespace GriffNode.SDK.Model
         public int? MonthlyTransactionLimit { get; set; }
 
         /// <summary>
-        /// Gets or Sets OverageCostPerTx
+        /// Always 0. Plans have a hard monthly limit and no overage.
         /// </summary>
+        /// <value>Always 0. Plans have a hard monthly limit and no overage.</value>
         [DataMember(Name = "overage_cost_per_tx", EmitDefaultValue = false)]
+        [Obsolete]
         public decimal OverageCostPerTx { get; set; }
 
         /// <summary>

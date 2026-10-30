@@ -60,20 +60,22 @@ namespace GriffNode.SDK.Api
         /// <returns>ApiResponse of GetStats200Response</returns>
         ApiResponse<GetStats200Response> GetStatsWithHttpInfo();
         /// <summary>
-        /// On-platform balances (for overage/top-up; NOT crypto settlement)
+        /// Deprecated: always an empty list. GriffNode keeps no on-platform balance (no overage, no top-ups); crypto settles straight to your wallet.
         /// </summary>
         /// <exception cref="GriffNode.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ListBalances200Response</returns>
+        [Obsolete]
         ListBalances200Response ListBalances();
 
         /// <summary>
-        /// On-platform balances (for overage/top-up; NOT crypto settlement)
+        /// Deprecated: always an empty list. GriffNode keeps no on-platform balance (no overage, no top-ups); crypto settles straight to your wallet.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="GriffNode.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ListBalances200Response</returns>
+        [Obsolete]
         ApiResponse<ListBalances200Response> ListBalancesWithHttpInfo();
         /// <summary>
         /// GriffNode billing invoices (platform ↔ merchant)
@@ -163,7 +165,7 @@ namespace GriffNode.SDK.Api
         /// <returns>Task of ApiResponse (GetStats200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetStats200Response>> GetStatsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
-        /// On-platform balances (for overage/top-up; NOT crypto settlement)
+        /// Deprecated: always an empty list. GriffNode keeps no on-platform balance (no overage, no top-ups); crypto settles straight to your wallet.
         /// </summary>
         /// <remarks>
         /// 
@@ -171,10 +173,11 @@ namespace GriffNode.SDK.Api
         /// <exception cref="GriffNode.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListBalances200Response</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ListBalances200Response> ListBalancesAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
-        /// On-platform balances (for overage/top-up; NOT crypto settlement)
+        /// Deprecated: always an empty list. GriffNode keeps no on-platform balance (no overage, no top-ups); crypto settles straight to your wallet.
         /// </summary>
         /// <remarks>
         /// 
@@ -182,6 +185,7 @@ namespace GriffNode.SDK.Api
         /// <exception cref="GriffNode.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListBalances200Response)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<ListBalances200Response>> ListBalancesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// GriffNode billing invoices (platform ↔ merchant)
@@ -669,10 +673,11 @@ namespace GriffNode.SDK.Api
         }
 
         /// <summary>
-        /// On-platform balances (for overage/top-up; NOT crypto settlement) 
+        /// Deprecated: always an empty list. GriffNode keeps no on-platform balance (no overage, no top-ups); crypto settles straight to your wallet. 
         /// </summary>
         /// <exception cref="GriffNode.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ListBalances200Response</returns>
+        [Obsolete]
         public ListBalances200Response ListBalances()
         {
             GriffNode.SDK.Client.ApiResponse<ListBalances200Response> localVarResponse = ListBalancesWithHttpInfo();
@@ -680,10 +685,11 @@ namespace GriffNode.SDK.Api
         }
 
         /// <summary>
-        /// On-platform balances (for overage/top-up; NOT crypto settlement) 
+        /// Deprecated: always an empty list. GriffNode keeps no on-platform balance (no overage, no top-ups); crypto settles straight to your wallet. 
         /// </summary>
         /// <exception cref="GriffNode.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ListBalances200Response</returns>
+        [Obsolete]
         public GriffNode.SDK.Client.ApiResponse<ListBalances200Response> ListBalancesWithHttpInfo()
         {
             GriffNode.SDK.Client.RequestOptions localVarRequestOptions = new GriffNode.SDK.Client.RequestOptions();
@@ -723,11 +729,12 @@ namespace GriffNode.SDK.Api
         }
 
         /// <summary>
-        /// On-platform balances (for overage/top-up; NOT crypto settlement) 
+        /// Deprecated: always an empty list. GriffNode keeps no on-platform balance (no overage, no top-ups); crypto settles straight to your wallet. 
         /// </summary>
         /// <exception cref="GriffNode.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListBalances200Response</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<ListBalances200Response> ListBalancesAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             GriffNode.SDK.Client.ApiResponse<ListBalances200Response> localVarResponse = await ListBalancesWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
@@ -735,11 +742,12 @@ namespace GriffNode.SDK.Api
         }
 
         /// <summary>
-        /// On-platform balances (for overage/top-up; NOT crypto settlement) 
+        /// Deprecated: always an empty list. GriffNode keeps no on-platform balance (no overage, no top-ups); crypto settles straight to your wallet. 
         /// </summary>
         /// <exception cref="GriffNode.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListBalances200Response)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<GriffNode.SDK.Client.ApiResponse<ListBalances200Response>> ListBalancesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 

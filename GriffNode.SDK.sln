@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 VisualStudioVersion = 12.0.0.0
 MinimumVisualStudioVersion = 10.0.0.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GriffNode.SDK", "src\GriffNode.SDK\GriffNode.SDK.csproj", "{AF1E40F2-4FD0-4A43-ACF3-5CCC75A84477}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GriffNode.SDK", "src\GriffNode.SDK\GriffNode.SDK.csproj", "{5BFE4AA7-E60A-4008-9CFC-44552F9858A0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GriffNode.SDK.Test", "src\GriffNode.SDK.Test\GriffNode.SDK.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
@@ -12,10 +12,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AF1E40F2-4FD0-4A43-ACF3-5CCC75A84477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF1E40F2-4FD0-4A43-ACF3-5CCC75A84477}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AF1E40F2-4FD0-4A43-ACF3-5CCC75A84477}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AF1E40F2-4FD0-4A43-ACF3-5CCC75A84477}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BFE4AA7-E60A-4008-9CFC-44552F9858A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BFE4AA7-E60A-4008-9CFC-44552F9858A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BFE4AA7-E60A-4008-9CFC-44552F9858A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BFE4AA7-E60A-4008-9CFC-44552F9858A0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU

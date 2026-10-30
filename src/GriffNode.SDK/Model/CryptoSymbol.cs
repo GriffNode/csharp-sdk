@@ -94,40 +94,40 @@ namespace GriffNode.SDK.Model
         WBTC = 10,
 
         /// <summary>
+        /// Enum WETH for value: WETH
+        /// </summary>
+        [EnumMember(Value = "WETH")]
+        WETH = 11,
+
+        /// <summary>
         /// Enum SHIB for value: SHIB
         /// </summary>
         [EnumMember(Value = "SHIB")]
-        SHIB = 11,
+        SHIB = 12,
 
         /// <summary>
         /// Enum PEPE for value: PEPE
         /// </summary>
         [EnumMember(Value = "PEPE")]
-        PEPE = 12,
+        PEPE = 13,
 
         /// <summary>
         /// Enum LINK for value: LINK
         /// </summary>
         [EnumMember(Value = "LINK")]
-        LINK = 13,
+        LINK = 14,
 
         /// <summary>
         /// Enum UNI for value: UNI
         /// </summary>
         [EnumMember(Value = "UNI")]
-        UNI = 14,
+        UNI = 15,
 
         /// <summary>
-        /// Enum AAVE for value: AAVE
+        /// Enum LEO for value: LEO
         /// </summary>
-        [EnumMember(Value = "AAVE")]
-        AAVE = 15,
-
-        /// <summary>
-        /// Enum MKR for value: MKR
-        /// </summary>
-        [EnumMember(Value = "MKR")]
-        MKR = 16
+        [EnumMember(Value = "LEO")]
+        LEO = 16
     }
 
 }

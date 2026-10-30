@@ -45,7 +45,7 @@ namespace GriffNode.SDK.Model
         /// <param name="monthlyPriceUsd">monthlyPriceUsd.</param>
         /// <param name="yearlyPriceUsd">yearlyPriceUsd.</param>
         /// <param name="monthlyTransactionLimit">monthlyTransactionLimit.</param>
-        /// <param name="overageCostPerTx">overageCostPerTx.</param>
+        /// <param name="overageCostPerTx">Always 0. Plans have a hard monthly limit and no overage..</param>
         /// <param name="webhookSupport">webhookSupport.</param>
         /// <param name="webhookLimit">webhookLimit.</param>
         /// <param name="ipWhitelist">ipWhitelist.</param>
@@ -86,9 +86,11 @@ namespace GriffNode.SDK.Model
         public int? MonthlyTransactionLimit { get; set; }
 
         /// <summary>
-        /// Gets or Sets OverageCostPerTx
+        /// Always 0. Plans have a hard monthly limit and no overage.
         /// </summary>
+        /// <value>Always 0. Plans have a hard monthly limit and no overage.</value>
         [DataMember(Name = "overage_cost_per_tx", EmitDefaultValue = false)]
+        [Obsolete]
         public decimal OverageCostPerTx { get; set; }
 
         /// <summary>
