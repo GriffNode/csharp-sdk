@@ -4,6 +4,7 @@ on:
     types: [published]
 permissions:
   contents: read
+  id-token: write  # required to mint the GitHub OIDC token NuGet Trusted Publishing exchanges
 jobs:
   nuget:
     runs-on: ubuntu-latest
@@ -12,5 +13,16 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
-      - run: dotnet pack -c Release -o out
-      - run: dotnet nuget push "out/*.nupkg" --api-key "${{ secrets.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
+      # Explicit project path (defensive): dotnet pack with no target fails outright if more
+      # than one .sln/.csproj ever ends up at the repo root again — happened once already
+      # (see "Remove stale CryptoGate files left over from before the rebrand").
+      - run: dotnet pack src/GriffNode.SDK/GriffNode.SDK.csproj -c Release -o out
+      # Trusted Publishing (OIDC) — no long-lived NUGET_API_KEY secret. "Griffnode" must match
+      # the Package Owner on the nuget.org policy exactly (GriffnodeCSharpSDK policy, glob
+      # GriffNode.SDK*).
+      - name: NuGet trusted publishing
+        id: nuget_login
+        uses: NuGet/login@v1
+        with:
+          user: Griffnode
+      - run: dotnet nuget push "out/*.nupkg" --api-key "${{ steps.nuget_login.outputs.token }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
